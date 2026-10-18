@@ -20,30 +20,41 @@ export default class ServiceApuestas {
       axios.get(url + request).then((response) => {
         console.log("Leyendo detalles del equipo: " + id);
         resolve(response.data);
-      })
+      });
     });
   }
 
-  getJugadoresEquipo(idEquipo){
+  getJugadoresEquipo(idEquipo) {
     return new Promise(function (resolve) {
       var url = Global.urlApiApuestas;
       var request = "api/jugadores/jugadoresequipos/" + idEquipo;
       axios.get(url + request).then((response) => {
         console.log("Leyendo jugadores");
         resolve(response.data);
-      })
-    })
+      });
+    });
   }
 
-  getJugadorDetalles(idJugador){
+  getJugadoresNombre(nombre) {
+    return new Promise(function (resolve) {
+      var url = Global.urlApiApuestas;
+      var request = "api/jugadores/findjugadores/" + nombre;
+      axios.get(url + request).then((response) => {
+        console.log("Leyendo jugadores");
+        resolve(response.data);
+      });
+    });
+  }
+
+  getJugadorDetalles(idJugador) {
     return new Promise(function (resolve) {
       var url = Global.urlApiApuestas;
       var request = "api/jugadores/" + idJugador;
       axios.get(url + request).then((response) => {
         console.log("Leyendo detalles del jugador: " + idJugador);
         resolve(response.data);
-      })
-    })
+      });
+    });
   }
 
   getApuestas() {
@@ -81,7 +92,7 @@ export default class ServiceApuestas {
       axios.delete(url + request).then((response) => {
         console.log("Eliminando apuesta: " + id);
         resolve(response);
-      })
+      });
     });
   }
 }
