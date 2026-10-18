@@ -34,7 +34,7 @@ export default class JugadoresEquipo extends Component {
     } else {
       return (
         <div style={{ textAlign: "center", marginInline: "25%" }}>
-          <button className='btn btn-success'>Volver</button>
+          <NavLink to='/' className='btn btn-success' >Volver</NavLink>
           <table className='table table-bordered table-striped'>
             <thead>
               <tr>
@@ -49,7 +49,7 @@ export default class JugadoresEquipo extends Component {
                   <tr key={index}>
                     <td>{jugador.nombre}</td>
                     <td><img src={jugador.imagen} width={100} /></td>
-                    <td><NavLink to={"/jugadordetalles/" + jugador.idJugador}>Detalles</NavLink></td>
+                    <td><NavLink to={"/jugadordetalles/" + jugador.idJugador} className='btn btn-outline-danger'>Detalles</NavLink></td>
                   </tr>
                 )
               })

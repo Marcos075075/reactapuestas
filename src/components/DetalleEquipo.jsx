@@ -45,7 +45,7 @@ export default class DetalleEquipo extends Component {
           <h3>Champions ganadas: {this.state.equipo.champions}</h3>
           <h5>{this.state.equipo.descripcion}</h5>
           <NavLink className='btn btn-success' to={"/jugadores/" + this.state.equipo.idEquipo}>Jugadores</NavLink>
-          <button className='btn btn-info'>Volver</button>
+          <NavLink className='btn btn-info' to={"/"}>Volver</NavLink>
         </div>
       )
     }
